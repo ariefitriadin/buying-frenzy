@@ -2,8 +2,6 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 class ConfigService {
 
-  constructor() { }
-
   public getTypeOrmConfig(): TypeOrmModuleOptions {
     return {
       type: 'postgres',
@@ -18,7 +16,7 @@ class ConfigService {
 
       migrationsTableName: 'migration',
 
-      migrations: ['dist/migration/*{.ts,.js}'],
+      migrations: ['src/migration/*.ts'],
 
       cli: {
         migrationsDir: 'src/migration',
