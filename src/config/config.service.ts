@@ -12,7 +12,7 @@ class ConfigService {
       password: 'postgres',
       database: 'localpgdb',
 
-      entities: ['dist/**/*.entity{.ts,.js}'],
+      entities: ['**/*.entity{.ts,.js}'],
 
       migrationsTableName: 'migration',
 
