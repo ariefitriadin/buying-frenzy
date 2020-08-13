@@ -1,6 +1,7 @@
 import { Entity, Column, CreateDateColumn, ManyToOne } from 'typeorm';
 import { BaseEntity } from './base.entity';
 import { User } from './user.entity';
+import { Restaurant } from './restaurant.entity';
 
 
 @Entity({ name: 'order'})
@@ -11,6 +12,9 @@ export class Order extends BaseEntity {
 
     @Column({ type: 'double'})
     userId: number;
+
+    @Column({ type: 'double'})
+    restaurantId: number;
 
     @Column({ type: 'varchar', length: 300})
     restaurantName: string;
@@ -23,4 +27,7 @@ export class Order extends BaseEntity {
 
     @ManyToOne(type => User, user => user.orders)
     user: User;
+
+    @ManyToOne(type => Restaurant, restaurant => restaurant.orders)
+    restaurant: Restaurant;
 }

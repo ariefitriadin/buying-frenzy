@@ -1,6 +1,8 @@
 import { Entity, Column, OneToMany } from 'typeorm';
 import { BaseEntity } from './base.entity';
 import { Menu } from './menu.entity';
+import { OpenHour } from './openhour.entity';
+import { Order } from './order.entity';
 
 @Entity({ name: 'restaurant'})
 export class Restaurant extends BaseEntity {
@@ -13,4 +15,10 @@ export class Restaurant extends BaseEntity {
 
     @OneToMany(type => Menu, menu => menu.restaurantId)
     menus: Menu[]
+
+    @OneToMany(type => OpenHour, openinghour => openinghour.restaurantId)
+    openingHours: OpenHour[]
+
+    @OneToMany(type => Order, order => order.restaurantId)
+    orders: Order[]
 }
