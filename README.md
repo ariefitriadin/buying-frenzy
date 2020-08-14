@@ -12,6 +12,7 @@ a backend service and a database for a food delivery platform
 
 Local Machine Requirement : 
 - Docker
+- Node > 11
 
 
 ```bash
