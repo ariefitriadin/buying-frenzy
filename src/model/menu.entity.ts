@@ -5,9 +5,6 @@ import { Restaurant } from './restaurant.entity';
 @Entity({ name: 'menu'})
 export class Menu extends BaseEntity {
 
-    @Column({ type: 'double'})
-    restaurantId: number;
-
     @Column({ type: 'varchar', length: 300})
     dishName: string;
 

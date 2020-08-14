@@ -5,9 +5,6 @@ import { Restaurant } from './restaurant.entity';
 @Entity({ name: 'openinghour'})
 export class OpenHour extends BaseEntity {
 
-    @Column({ type: 'double'})
-    restaurantId: number;
-
     @Column({ type: 'timestamptz' })
     openingHour: Date;
 

@@ -13,12 +13,12 @@ export class Restaurant extends BaseEntity {
     @Column({ type: 'float'})
     cashBalance: number;
 
-    @OneToMany(type => Menu, menu => menu.restaurantId)
+    @OneToMany(type => Menu, menu => menu.restaurant)
     menus: Menu[]
 
-    @OneToMany(type => OpenHour, openinghour => openinghour.restaurantId)
+    @OneToMany(type => OpenHour, openinghour => openinghour.restaurant)
     openingHours: OpenHour[]
 
-    @OneToMany(type => Order, order => order.restaurantId)
+    @OneToMany(type => Order, order => order.restaurant)
     orders: Order[]
 }
