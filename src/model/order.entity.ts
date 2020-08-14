@@ -1,29 +1,22 @@
-import { Entity, Column, CreateDateColumn, ManyToOne } from 'typeorm';
+import { Entity, Column, CreateDateColumn, ManyToOne, OneToOne, JoinColumn } from 'typeorm';
 import { BaseEntity } from './base.entity';
 import { User } from './user.entity';
 import { Restaurant } from './restaurant.entity';
+import { Menu } from "./menu.entity";
 
 
 @Entity({ name: 'order'})
 export class Order extends BaseEntity {
-
-    @Column({ type: 'varchar', length: 300})
-    dishName: string;
-
-    @Column({ type: 'double'})
-    userId: number;
-
-    @Column({ type: 'double'})
-    restaurantId: number;
-
-    @Column({ type: 'varchar', length: 300})
-    restaurantName: string;
 
     @Column({ type: 'float'})
     transactionAmount: number;
 
     @CreateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
     transactionDate: Date;
+
+    @OneToOne(type => Menu)
+    @JoinColumn()
+    dishName: Menu;
 
     @ManyToOne(type => User, user => user.orders)
     user: User;
