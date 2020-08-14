@@ -3,12 +3,16 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { configService } from './config/config.service';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersModule } from './users/users.module';
+import { UserModule } from './user/user.module';
+import { OrderModule } from './order/order.module';
+import { RestaurantModule } from './restaurant/restaurant.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
-    UsersModule,
+    UserModule,
+    OrderModule,
+    RestaurantModule,
   ],
   controllers: [AppController],
   providers: [AppService],
