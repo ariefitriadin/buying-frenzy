@@ -8,31 +8,40 @@ Buyinng Frenzy
 a backend service and a database for a food delivery platform
 
 
+## Pre Development in local machine
+
+Local Machine Requirement : 
+- Docker
+
+
+```bash
+
+#after clone the repository
+$ go to root app directory
+
+# install required library
+$ npm install
+
+#run postgres db in docker
+$ npm run start:dev:db
+
+#run migration
+$ npm run typeorm:migration:run
+
+# development
+$ npm run start:dev
+
+```
+
+
 ## Running the app
 
 ```bash
 # development
-$ npm run start
-
-# watch mode
 $ npm run start:dev
 
-# production mode
-$ npm run start:prod
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
 
 
 
