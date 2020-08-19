@@ -16,7 +16,7 @@ export class Order extends BaseEntity {
 
     @OneToOne(type => Menu)
     @JoinColumn()
-    dishName: Menu;
+    menu: Menu;
 
     @ManyToOne(type => User, user => user.orders)
     user: User;
