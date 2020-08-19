@@ -35,11 +35,11 @@ $ npm run start:dev
 ```
 
 
-## Running the app
+## Access API Docs ( Swagger )
 
 ```bash
-# development
-$ npm run start:dev
+# in web browser:
+$ http://localhost:3001/docs
 
 ```
 
