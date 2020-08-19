@@ -1,11 +1,14 @@
-import { ApiModelProperty } from '@nestjs/swagger';
-import { IsString, IsNumber } from 'class-validator';
+import { IsString, IsNumber, MaxLength } from 'class-validator';
 
 export class UserDto {
 
+    @IsNumber()
+    id: number
+
     @IsString()
-    name: string
+    @MaxLength(300)
+    name: string;
 
     @IsNumber()
-    cashBalance: number
+    cashBalance: number;
 }
