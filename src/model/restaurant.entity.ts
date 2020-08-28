@@ -14,11 +14,11 @@ export class Restaurant extends BaseEntity {
     cashBalance: number;
 
     @OneToMany(type => Menu, menu => menu.restaurant)
-    menus: Menu[]
+    menus?: Menu[]
 
     @OneToMany(type => OpenHour, openinghour => openinghour.restaurant)
-    openingHours: OpenHour[]
+    openingHours?: OpenHour[]
 
     @OneToMany(type => Order, order => order.restaurant)
-    orders: Order[]
+    orders?: Order[]
 }

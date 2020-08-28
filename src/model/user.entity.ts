@@ -12,6 +12,6 @@ export class User extends BaseEntity {
     cashBalance: number;
 
     @OneToMany(type => Order, order => order.user)
-    orders: Order[]
+    orders?: Order[]
 
 }

@@ -13,6 +13,6 @@ export abstract class BaseEntity {
     @UpdateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
     lastChangedDateTime: Date;
 
-    @Column({ type: 'varchar', length: 300 })
-    lastChangedBy: string;
+    @Column({ type: 'varchar', length: 300, default: () => '' })
+    lastChangedBy?: string;
 }
